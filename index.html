@@ -316,11 +316,11 @@
         <div class="tags"><span class="tag">CCTV / VMS</span><span class="tag">Networking</span><span class="tag">Avigilon</span></div>
       </div>
       <div class="cs-body">
-        <div class="cs-row"><div class="k">Situation</div><div class="v" data-field="cs1-situation">[EDIT] An enterprise site running ~1,330 cameras was reaching end-of-life on its recording infrastructure, with zero tolerance for recording gaps during the change.</div></div>
-        <div class="cs-row"><div class="k">My role</div><div class="v" data-field="cs1-role">[EDIT] Led the migration end-to-end: sequencing, vendor coordination, and the go/no-go decision at each cutover step.</div></div>
-        <div class="cs-row"><div class="k">Approach</div><div class="v" data-field="cs1-approach">[EDIT] Phased replacement of the recording servers, 10 Gbps fibre and VLAN re-routing planned around a parallel-operation window, with rollback points built into the schedule.</div></div>
-        <div class="cs-row"><div class="k">Outcome</div><div class="v" data-field="cs1-outcome">[EDIT] Full cutover completed with no loss of recording continuity and no unplanned downtime reported by the client.</div></div>
-        <div class="lesson" data-field="cs1-lesson">Lesson learned: [EDIT — e.g. "the parallel-operation window was worth the extra cost; it's what actually made the rollback option real rather than theoretical."]</div>
+        <div class="cs-row"><div class="k">Situation</div><div class="v" data-field="cs1-situation">A live environment running roughly 1,330 cameras was reaching end-of-life on its recording infrastructure, with zero tolerance for gaps in the footage — not a system that could go dark for a maintenance window.</div></div>
+        <div class="cs-row"><div class="k">My role</div><div class="v" data-field="cs1-role">Owned the migration plan end-to-end — the phasing, the vendor coordination, and the go/no-go call at each step.</div></div>
+        <div class="cs-row"><div class="k">Approach</div><div class="v" data-field="cs1-approach">Replaced the recording servers in phases rather than one cutover, running old and new infrastructure in parallel over 10 Gbps fibre with VLAN re-routing, so there was always a working fallback until the new side proved itself under real load.</div></div>
+        <div class="cs-row"><div class="k">Outcome</div><div class="v" data-field="cs1-outcome">Completed the full migration with no gap in recording continuity and no unplanned downtime.</div></div>
+        <div class="lesson" data-field="cs1-lesson">Lesson learned: the parallel-operation window cost more time upfront than a straight cutover would have — but it's the only way I'd sign off on changing live security infrastructure with this little margin for error.</div>
       </div>
     </div>
 
