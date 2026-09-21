@@ -344,11 +344,11 @@
         <div class="tags"><span class="tag">ANPR</span><span class="tag">Barriers</span><span class="tag">Systems Integration</span></div>
       </div>
       <div class="cs-body">
-        <div class="cs-row"><div class="k">Situation</div><div class="v" data-field="cs3-situation">[EDIT] Vehicle access needed to move from manual/guard-operated control to an automated, auditable flow.</div></div>
-        <div class="cs-row"><div class="k">My role</div><div class="v" data-field="cs3-role">[EDIT] Designed and troubleshot the integration between ANPR cameras, barriers, loop detectors and safety-loop/relay logic.</div></div>
-        <div class="cs-row"><div class="k">Approach</div><div class="v" data-field="cs3-approach">[EDIT] Built and tested the fail-safe logic before go-live, including what happens on a false read or a power interruption.</div></div>
-        <div class="cs-row"><div class="k">Outcome</div><div class="v" data-field="cs3-outcome">[EDIT] Automated, logged vehicle access with a defined fallback path for edge cases.</div></div>
-        <div class="lesson" data-field="cs3-lesson">Lesson learned: [EDIT — e.g. "most of the real engineering effort went into the failure paths, not the happy path."]</div>
+        <div class="cs-row"><div class="k">Situation</div><div class="v" data-field="cs3-situation">Vehicle access relied on a manual, guard-operated process with no clean audit trail.</div></div>
+        <div class="cs-row"><div class="k">My role</div><div class="v" data-field="cs3-role">Designed and troubleshot the integration between ANPR cameras, barriers, loop detectors and the underlying safety-loop/relay logic.</div></div>
+        <div class="cs-row"><div class="k">Approach</div><div class="v" data-field="cs3-approach">Built and tested the failure paths — a false plate read, a power interruption — before go-live, not just the path where everything works.</div></div>
+        <div class="cs-row"><div class="k">Outcome</div><div class="v" data-field="cs3-outcome">Automated, logged vehicle access with a defined, tested fallback for edge cases.</div></div>
+        <div class="lesson" data-field="cs3-lesson">Lesson learned: most of the real engineering effort went into what happens when something goes wrong, not what happens when everything works — that's usually where a project like this actually fails if you skip it.</div>
       </div>
     </div>
   </section>
