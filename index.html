@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Khodor Ghalayini — Technical Project Manager</title>
+<meta name="description" content="Portfolio of Khodor Ghalayini — Technical Project Manager and Electrical & Electronic Security Systems Engineer. Case studies, systems index, certifications, and side projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#F4F6F9;
+    --surface:#FFFFFF;
+    --surface-2:#EAEEF3;
+    --ink:#12213C;
+    --muted:#4C6483;
+    --line:#C7D1DE;
+    --navy:#1F3864;
+    --navy-ink:#FFFFFF;
+    --accent:#C0521A;
+    --accent-soft:#FDF1E8;
+    --accent-ink:#7A3A0F;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E1726;
+      --surface:#16233A;
+      --surface-2:#1D2C46;
+      --ink:#E7ECF3;
+      --muted:#9DB0C7;
+      --line:#2B3B58;
+      --navy:#8FADDD;
+      --navy-ink:#0E1726;
+      --accent:#E48A54;
+      --accent-soft:#2A2013;
+      --accent-ink:#F3C9A8;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E1726;
+    --surface:#16233A;
+    --surface-2:#1D2C46;
+    --ink:#E7ECF3;
+    --muted:#9DB0C7;
+    --line:#2B3B58;
+    --navy:#8FADDD;
+    --navy-ink:#0E1726;
+    --accent:#E48A54;
+    --accent-soft:#2A2013;
+    --accent-ink:#F3C9A8;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+    padding-inline:20px;
+  }
+  .wrap{max-width:920px;margin:0 auto;}
+  h1,h2,h3{font-family:var(--sans);font-weight:700;text-wrap:balance;margin:0;}
+  a{color:var(--navy);}
+  .label{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .mono{font-family:var(--mono);}
+  .num{font-variant-numeric:tabular-nums;}
+
+  .titleblock{
+    margin-top:28px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 27px, color-mix(in srgb, var(--line) 35%, transparent) 27px 28px),
+      repeating-linear-gradient(90deg, transparent 0 27px, color-mix(in srgb, var(--line) 35%, transparent) 27px 28px),
+      var(--surface);
+    padding:22px 22px 0 22px;
+    overflow:hidden;
+  }
+  .titleblock .eyebrow{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;}
+  .titleblock h1{font-size:clamp(28px,5vw,42px);letter-spacing:-.01em;color:var(--navy);margin-top:6px;}
+  .role{font-size:clamp(14px,2.4vw,17px);color:var(--muted);margin-top:6px;font-weight:500;}
+  .status-line{
+    margin-top:14px;
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:12.5px;
+    color:var(--accent-ink);
+    background:var(--accent-soft);
+    border:1px dashed var(--accent);
+    border-radius:3px;
+    padding:6px 10px;
+  }
+  .tb-grid{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    border-top:1px solid var(--line);
+  }
+  .tb-cell{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:10px 14px 12px;
+  }
+  .tb-cell:last-child{border-right:none;}
+  .tb-cell .v{font-size:13.5px;margin-top:3px;word-break:break-word;}
+  .tb-cell .v a{text-decoration:none;border-bottom:1px solid var(--line);}
+
+  nav.sheets{
+    margin-top:18px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 18px;
+    padding:12px 4px;
+    border-bottom:1px solid var(--line);
+    font-family:var(--mono);
+    font-size:12px;
+  }
+  nav.sheets a{color:var(--muted);text-decoration:none;}
+  nav.sheets a:hover{color:var(--navy);}
+
+  section{margin-top:52px;scroll-margin-top:18px;}
+  .sheet-head{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    border-bottom:2px solid var(--navy);
+    padding-bottom:8px;
+    margin-bottom:20px;
+  }
+  .sheet-head .sheet-no{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--navy-ink);
+    background:var(--navy);
+    padding:3px 7px;
+    border-radius:3px;
+    flex-shrink:0;
+  }
+  .sheet-head h2{font-size:clamp(19px,3vw,24px);}
+
+  p{margin:0 0 12px;max-width:65ch;}
+  p:last-child{margin-bottom:0;}
+
+  .note{
+    border:1px dashed var(--accent);
+    background:var(--accent-soft);
+    color:var(--accent-ink);
+    border-radius:4px;
+    padding:12px 14px;
+    font-size:13.5px;
+    margin-bottom:22px;
+  }
+  .note b{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;font-family:var(--mono);}
+
+  .cs-card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:var(--surface);
+    padding:20px 22px;
+    margin-bottom:18px;
+  }
+  .cs-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;}
+  .cs-head h3{font-size:17px;color:var(--navy);}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;}
+  .tag{
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    background:var(--surface-2);
+    color:var(--muted);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:3px 9px;
+    white-space:nowrap;
+  }
+  .cs-body{margin-top:14px;display:grid;gap:12px;}
+  .cs-row{display:grid;grid-template-columns:96px 1fr;gap:10px;}
+  @media (max-width:520px){.cs-row{grid-template-columns:1fr;}}
+  .cs-row .k{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px;}
+  .cs-row .v{font-size:14.5px;}
+  .lesson{
+    margin-top:4px;
+    padding-top:12px;
+    border-top:1px dashed var(--line);
+    font-size:14px;
+    font-style:italic;
+    color:var(--muted);
+  }
+
+  .schedule{width:100%;border-collapse:collapse;font-size:13.5px;overflow-x:auto;display:block;}
+  .schedule thead{display:table;width:100%;table-layout:fixed;}
+  .schedule tbody{display:table;width:100%;table-layout:fixed;}
+  .schedule th{
+    text-align:left;
+    font-family:var(--mono);
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--muted);
+    border-bottom:2px solid var(--navy);
+    padding:8px 10px;
+  }
+  .schedule td{
+    border-bottom:1px solid var(--line);
+    padding:12px 10px;
+    vertical-align:top;
+  }
+  .schedule tr:nth-child(even) td{background:var(--surface-2);}
+  .fleet-num{font-family:var(--mono);font-weight:600;color:var(--navy);}
+
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
+  .cert{
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:14px 16px;
+    background:var(--surface);
+  }
+  .cert .name{font-weight:600;font-size:14px;}
+  .cert .issuer{font-size:12.5px;color:var(--muted);margin-top:2px;}
+
+  .side-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+  .side-card{
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:18px 20px;
+    background:var(--surface);
+  }
+  .side-card h3{font-size:15px;color:var(--navy);margin-bottom:8px;}
+  .repo{border-top:1px solid var(--line);padding-top:10px;margin-top:10px;font-size:13.5px;}
+  .repo:first-of-type{border-top:none;padding-top:0;margin-top:0;}
+  .repo .name{font-family:var(--mono);font-weight:600;font-size:13px;}
+  .repo .desc{color:var(--muted);margin-top:2px;}
+
+  footer{
+    margin:60px 0 40px;
+    border-top:1px solid var(--line);
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:16px;
+  }
+  .contact-links{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;}
+  .btn{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:12.5px;
+    text-decoration:none;
+    color:var(--navy-ink);
+    background:var(--navy);
+    padding:9px 16px;
+    border-radius:4px;
+    letter-spacing:.03em;
+  }
+  .foot-note{font-size:12px;color:var(--muted);width:100%;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="titleblock">
+    <div class="eyebrow">
+      <span class="label">Portfolio · Rev 01</span>
+      <span class="label num" id="rev-date"></span>
+    </div>
+    <h1>Khodor Ghalayini</h1>
+    <div class="role">Technical Project Manager — Electrical &amp; Electronic Security Systems Engineer</div>
+    <div class="status-line">Open to relocation — New Zealand · Green List eligible (ICT Project Manager, ANZSCO 135112)</div>
+
+    <div class="tb-grid">
+      <div class="tb-cell"><span class="label">Based in</span><div class="v">Abu Dhabi, UAE</div></div>
+      <div class="tb-cell"><span class="label">Email</span><div class="v"><a href="mailto:khodor04@gmail.com">khodor04@gmail.com</a></div></div>
+      <div class="tb-cell"><span class="label">LinkedIn</span><div class="v"><a href="https://linkedin.com/in/khodor-ghalayini" target="_blank" rel="noopener">linkedin.com/in/khodor-ghalayini</a></div></div>
+      <div class="tb-cell"><span class="label">GitHub</span><div class="v"><a href="#" target="_blank" rel="noopener" data-field="github-url">github.com/[your-username]</a></div></div>
+    </div>
+  </div>
+
+  <nav class="sheets">
+    <a href="#summary">01 · Summary</a>
+    <a href="#cases">02 · Case Studies</a>
+    <a href="#systems">03 · Systems &amp; Fleet</a>
+    <a href="#certs">04 · Certifications</a>
+    <a href="#beyond">05 · Beyond the Day Job</a>
+    <a href="#contact">06 · Contact</a>
+  </nav>
+
+  <section id="summary">
+    <div class="sheet-head"><span class="sheet-no">01</span><h2>Summary</h2></div>
+    <p>Electrical and computer engineer with 11+ years delivering enterprise CCTV/VMS, access control and ELV systems for government and enterprise clients in Abu Dhabi — from initial design through commissioning and long-term operation. This page expands on the CV: it's where the numbers on that page get a story behind them.</p>
+    <p style="margin-top:10px">Currently based in Abu Dhabi, relocating to New Zealand and building toward the ICT Project Manager pathway on the Green List. Certified across Milestone, Genetec, Avigilon, Pelco and Nedap AEOS, with a PMP behind the project-delivery side of the work.</p>
+  </section>
+
+  <section id="cases">
+    <div class="sheet-head"><span class="sheet-no">02</span><h2>Case Studies</h2></div>
+    <div class="note"><b>Before you publish this section</b>Keep every entry aggregate and anonymised — system types, scale, and outcomes are fine; client names, site addresses, floor plans, network diagrams or real IP ranges are not, especially for the government and police sites in this history. Redraw any diagram from scratch rather than exporting a real one.</div>
+
+    <div class="cs-card">
+      <div class="cs-head">
+        <h3>Enterprise CCTV Platform Migration</h3>
+        <div class="tags"><span class="tag">CCTV / VMS</span><span class="tag">Networking</span><span class="tag">Avigilon</span></div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-row"><div class="k">Situation</div><div class="v" data-field="cs1-situation">[EDIT] An enterprise site running ~1,330 cameras was reaching end-of-life on its recording infrastructure, with zero tolerance for recording gaps during the change.</div></div>
+        <div class="cs-row"><div class="k">My role</div><div class="v" data-field="cs1-role">[EDIT] Led the migration end-to-end: sequencing, vendor coordination, and the go/no-go decision at each cutover step.</div></div>
+        <div class="cs-row"><div class="k">Approach</div><div class="v" data-field="cs1-approach">[EDIT] Phased replacement of the recording servers, 10 Gbps fibre and VLAN re-routing planned around a parallel-operation window, with rollback points built into the schedule.</div></div>
+        <div class="cs-row"><div class="k">Outcome</div><div class="v" data-field="cs1-outcome">[EDIT] Full cutover completed with no loss of recording continuity and no unplanned downtime reported by the client.</div></div>
+        <div class="lesson" data-field="cs1-lesson">Lesson learned: [EDIT — e.g. "the parallel-operation window was worth the extra cost; it's what actually made the rollback option real rather than theoretical."]</div>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-head">
+        <h3>Multi-Site Security Programme, 15+ Sites</h3>
+        <div class="tags"><span class="tag">Access Control</span><span class="tag">Programme Mgmt</span><span class="tag">Team Leadership</span></div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-row"><div class="k">Situation</div><div class="v" data-field="cs2-situation">[EDIT] A portfolio of 15+ sites and 5,000+ devices needed one delivery standard across CCTV/VMS, access control, intercom, barriers and key management.</div></div>
+        <div class="cs-row"><div class="k">My role</div><div class="v" data-field="cs2-role">[EDIT] Owned technical delivery across the portfolio, directing 30+ engineers and technicians and acting as the escalation point for complex incidents.</div></div>
+        <div class="cs-row"><div class="k">Approach</div><div class="v" data-field="cs2-approach">[EDIT] Standardised design review, commissioning and handover documentation across sites so quality didn't depend on which team was on-site.</div></div>
+        <div class="cs-row"><div class="k">Outcome</div><div class="v" data-field="cs2-outcome">[EDIT] Consistent acceptance-first-time rate across the portfolio; portfolio value above AED 5M maintained without a dedicated QA layer.</div></div>
+        <div class="lesson" data-field="cs2-lesson">Lesson learned: [EDIT — e.g. "the documentation standard mattered more than any single tool choice — it's what let new technicians get productive fast."]</div>
+      </div>
+    </div>
+
+    <div class="cs-card">
+      <div class="cs-head">
+        <h3>Automated Vehicle Access Integration</h3>
+        <div class="tags"><span class="tag">ANPR</span><span class="tag">Barriers</span><span class="tag">Systems Integration</span></div>
+      </div>
+      <div class="cs-body">
+        <div class="cs-row"><div class="k">Situation</div><div class="v" data-field="cs3-situation">[EDIT] Vehicle access needed to move from manual/guard-operated control to an automated, auditable flow.</div></div>
+        <div class="cs-row"><div class="k">My role</div><div class="v" data-field="cs3-role">[EDIT] Designed and troubleshot the integration between ANPR cameras, barriers, loop detectors and safety-loop/relay logic.</div></div>
+        <div class="cs-row"><div class="k">Approach</div><div class="v" data-field="cs3-approach">[EDIT] Built and tested the fail-safe logic before go-live, including what happens on a false read or a power interruption.</div></div>
+        <div class="cs-row"><div class="k">Outcome</div><div class="v" data-field="cs3-outcome">[EDIT] Automated, logged vehicle access with a defined fallback path for edge cases.</div></div>
+        <div class="lesson" data-field="cs3-lesson">Lesson learned: [EDIT — e.g. "most of the real engineering effort went into the failure paths, not the happy path."]</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="systems">
+    <div class="sheet-head"><span class="sheet-no">03</span><h2>Systems &amp; Fleet</h2></div>
+    <p style="margin-bottom:18px">A reference index — the platforms you're certified on, and roughly how much of each has actually run in production.</p>
+    <table class="schedule">
+      <thead>
+        <tr><th>System</th><th>Platforms</th><th>Approx. scale</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CCTV / VMS</td>
+          <td>Avigilon ACC/Unity, Milestone XProtect, Genetec Security Center, Pelco VideoXpert, Digifort</td>
+          <td class="fleet-num num">5,000+ devices</td>
+          <td>Design, migration, and day-two operation across 15+ sites</td>
+        </tr>
+        <tr>
+          <td>Access Control</td>
+          <td>Nedap AEOS, intercom, barriers, key management</td>
+          <td class="fleet-num num">15+ sites</td>
+          <td>Requirements through commissioning and handover</td>
+        </tr>
+        <tr>
+          <td>Networking &amp; Infrastructure</td>
+          <td>IP addressing, VLANs, managed switching, fibre, 10 Gbps server links</td>
+          <td class="fleet-num num" data-field="systems-network-scale">[EDIT: e.g. 1,330-cam env.]</td>
+          <td>Bandwidth and capacity planning for recording infrastructure</td>
+        </tr>
+        <tr>
+          <td>ELV / Systems Integration</td>
+          <td>ANPR, gate barriers, loop detectors, X-ray, structured cabling</td>
+          <td class="fleet-num num" data-field="systems-elv-scale">[EDIT]</td>
+          <td>Site surveys through defect rectification</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="certs">
+    <div class="sheet-head"><span class="sheet-no">04</span><h2>Certifications &amp; Education</h2></div>
+    <div class="cert-grid">
+      <div class="cert"><div class="name">Project Management Professional</div><div class="issuer">PMP</div></div>
+      <div class="cert"><div class="name">Milestone Certified Design Engineer</div><div class="issuer">MCDE</div></div>
+      <div class="cert"><div class="name">Genetec Security Center Certification</div><div class="issuer">Genetec</div></div>
+      <div class="cert"><div class="name">Avigilon ACC 7 Certification</div><div class="issuer">Avigilon</div></div>
+      <div class="cert"><div class="name">Pelco VideoXpert Certified Solutions Specialist</div><div class="issuer">Pelco</div></div>
+      <div class="cert"><div class="name">AEOS Training</div><div class="issuer">Nedap</div></div>
+      <div class="cert"><div class="name">Digifort IP Surveillance — Enterprise</div><div class="issuer">Digifort</div></div>
+      <div class="cert"><div class="name">BEng, Electrical &amp; Computer Engineering</div><div class="issuer">American University of Beirut, 2009–2014</div></div>
+    </div>
+  </section>
+
+  <section id="beyond">
+    <div class="sheet-head"><span class="sheet-no">05</span><h2>Beyond the Day Job</h2></div>
+    <p style="margin-bottom:18px">Keep this section short — its job is to round out the technical picture, not compete with the case studies above for attention.</p>
+    <div class="side-grid">
+      <div class="side-card">
+        <h3>GitHub / Tools I've Built</h3>
+        <div class="repo">
+          <div class="name" data-field="repo1-name">[EDIT: repo-name]</div>
+          <div class="desc" data-field="repo1-desc">One line on the problem it solved and who used it — e.g. "a lightweight switch/network monitoring tool built for a Windows-based ELV environment, used to catch link drops before they became site incidents."</div>
+        </div>
+        <div class="repo">
+          <div class="name" data-field="repo2-name">[EDIT: repo-name]</div>
+          <div class="desc" data-field="repo2-desc">Lead with the outcome, not the stack — a hiring manager here is an engineer or PM, not a code reviewer.</div>
+        </div>
+      </div>
+      <div class="side-card">
+        <h3>Ventures &amp; Side Projects</h3>
+        <div class="repo">
+          <div class="name">LEADGEND</div>
+          <div class="desc" data-field="venture1-desc">[EDIT] Digital marketing and web services venture — one line on what it does and why you built it.</div>
+        </div>
+        <div class="repo">
+          <div class="name">AI Powered Kit</div>
+          <div class="desc" data-field="venture2-desc">[EDIT] Token-priced SaaS of AI tools and courses for creators — one line on scope or traction if you want to share it.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div>
+      <div class="label">Sheet 06 · Contact</div>
+      <div class="contact-links" style="margin-top:8px">
+        <a href="mailto:khodor04@gmail.com">khodor04@gmail.com</a>
+        <a href="https://linkedin.com/in/khodor-ghalayini" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener" data-field="github-url-2">GitHub</a>
+      </div>
+    </div>
+    <a class="btn" href="./assets/Khodor_Ghalayini_CV.pdf" target="_blank" rel="noopener" data-field="cv-link">Download CV (PDF)</a>
+    <div class="foot-note">Replace every [EDIT] block with your own detail before sharing the link. Phone number is left off this public page on purpose; keep it on the CV and in direct outreach.</div>
+  </footer>
+
+</div>
+
+<script>
+  try{
+    var d=new Date();
+    var el=document.getElementById('rev-date');
+    if(el){ el.textContent = d.toLocaleDateString('en-NZ',{year:'numeric',month:'short'}); }
+  }catch(e){}
+</script>
+</body>
+</html>
